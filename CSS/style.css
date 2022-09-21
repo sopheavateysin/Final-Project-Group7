@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+h1,
+section,
+form {
+    margin: 0 !important;
+    padding: 0 !important; 
+}
+
+h1{
+    text-align: center;
+}
+
+html, body, h1 {
+    width: 100vw;
+}
+
+ul {
+    display: flex !important;
+    align-items: right !important;
+    flex-direction: column;
+    padding: 20px;
+}
+.card {
+    margin: 1em !important;
+}
+.task {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+form,
+section {
+    display: flex !important;
+    align-items: right !important;
+    flex-direction: column !important;
+    margin: 1em !important;
+}
+
+.submit-btn {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-footer {
+    margin-top: 20px;
+}
+
+.badge {
+    position: absolute;
+    right: 10px;
+    color: white;
+}
