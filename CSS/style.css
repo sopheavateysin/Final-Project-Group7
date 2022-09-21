@@ -9,14 +9,16 @@ h1,
 section,
 form {
     margin: 0 !important;
-    padding: 0 !important; 
+    padding: 0 !important;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-html, body, h1 {
+html,
+body,
+h1 {
     width: 100vw;
 }
 
@@ -26,9 +28,11 @@ ul {
     flex-direction: column;
     padding: 20px;
 }
+
 .card {
     margin: 1em !important;
 }
+
 .task {
     font-weight: bold;
     margin-left: 20px;
@@ -58,4 +62,10 @@ section {
     position: absolute;
     right: 10px;
     color: white;
+}
+
+#main {
+    margin-left: 100px;
+    margin-right: 100px;
+
 }
