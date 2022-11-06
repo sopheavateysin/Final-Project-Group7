@@ -69,3 +69,8 @@ section {
     margin-right: 100px;
 
 }
+
+#alert {
+    visibility: hidden;
+    position: absolute;
+}
