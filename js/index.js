@@ -1,4 +1,5 @@
 
+
 const form = document.querySelector('#form');
 const newTaskNameInput = document.querySelector('#exampleInputtaskname');
 const newTaskDescription = document.querySelector('#exampleFormControlTextarea1');
@@ -7,6 +8,7 @@ const newDueDate = document.querySelector('#exampleInputduedate');
 form.addEventListener('click', (e) => {
     e.preventDefault();
     validFormFieldInput();
+    
     
 });
 
@@ -60,4 +62,9 @@ function onError (input, message){
 
  
 
+//console.log(example.tasks);
+//const task1 = example.addTask('Group 7', 'working on JavaScript', 'Sophia', '11/08/2022')
+//console.log(task1);
+//console.log(example);
+const example = new taskManager(0);
 
