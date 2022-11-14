@@ -6,9 +6,13 @@ const newTaskDescription = document.querySelector('#exampleFormControlTextarea1'
 const newAssignedTo = document.querySelector('#exampleInputassignedto');   
 const newDueDate = document.querySelector('#exampleInputduedate');
 const newTask = document.getElementsByClassName('row');
+
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     validFormFieldInput();
+    addTask();
+    render();
     
     
 });

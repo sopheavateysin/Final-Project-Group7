@@ -1,4 +1,4 @@
-const creatTaskHtml = (name, description, assignedTo, dueDate, status) => {
+const createTaskHtml = (name, description, assignedTo, dueDate, status) => {
  const html = `<li class="row">
  <div class="card" style="width: 48%;">
      <div class=" card-body">
@@ -13,6 +13,8 @@ const creatTaskHtml = (name, description, assignedTo, dueDate, status) => {
      </div>
  </div>
 </li>`
+
+return html;
 }
 
 
@@ -38,8 +40,19 @@ addTask(name, description, assignedTo, dueDate){
 }
 
 render() {
+let taskHtmlList =this.task;
+for (let currentTask = 0; currentTask<taskHtmlList.length; currentTask++){
+    let liveTask=taskHtmlList[currentTask];
+    let liveDate = new Date(liveTask.dueDate)
+    let formattedDate = liveDate.toLocalDateString();
+    let taskHtml = createTaskHtml(name, description, assignedTo, dueDate,status, formattedDate)
+        taskHtmlList.push(taskHtml);
+    }
+    let tasksHtml = taskHtmlList.join('\n');
     
+
 }
+
 }
- 
+
 
