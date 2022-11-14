@@ -71,6 +71,6 @@ section {
 }
 
 #alert {
-    visibility: hidden;
+    visibility: hidden ;
     position: absolute;
 }

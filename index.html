@@ -21,29 +21,29 @@
                 <h3 class="font-weight-bold">New Task</h3>
             </div>
             <div class="mx-5 py-2" id="main">
-
+                    <!--------------------- Task Form --------------------- -->
                 <form id="form" action="/" method="POST">
                     <span>
                         <label class="task" for="exampleInputtaskname">Task Name: </label>
                         <input type="taskname" class="form-control" id="exampleInputtaskname"
-                            aria-describedby="emailHelp" required>
+                            aria-describedby="emailHelp">
                         <div id="alert" class="alert alert-danger" role="alert"></div>
                     </span>
                     <span>
                         <label class="task" for="exampleFormControlTextarea1">Task Description: </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" required></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
                         <div id="alert" class="alert alert-danger" role="alert"></div>
                     </span>
                     <div class="row d-flex justify-content-space-between mb-3">
                         <div class="col-6 form-group">
                             <label class="task" for="exampleInputassignedto">Assigned To:</label>
-                            <input type="assignedto" class="form-control" id="exampleInputassignedto" required>
+                            <input type="assignedto" class="form-control" id="exampleInputassignedto">
                             <div id="alert" class="alert alert-danger" role="alert"></div>
-                        </div>
+                        </div> 
                         <div class="col-6 form-group">
                             <div class="mx-2">
                                 <label class="task" for="exampleInputduedate">Due Date: </label>
-                                <input type="date" class="form-control" id="exampleInputduedate" required>
+                                <input type="date" class="form-control" id="exampleInputduedate">
                                 <div id="alert" class="alert alert-danger" role="alert"></div>
                             </div>
 
@@ -54,6 +54,7 @@
                 </form>
             </div>
         </div>
+        <!-- -----------------add new tasks-------------------- -->
         <section>
             <div class="ml-5 py-2">
                 <h3 class="font-weight-bold ">Tasks</h3>

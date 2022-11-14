@@ -1,11 +1,12 @@
-
+const example = new taskManager(0);
 
 const form = document.querySelector('#form');
 const newTaskNameInput = document.querySelector('#exampleInputtaskname');
 const newTaskDescription = document.querySelector('#exampleFormControlTextarea1');
 const newAssignedTo = document.querySelector('#exampleInputassignedto');   
 const newDueDate = document.querySelector('#exampleInputduedate');
-form.addEventListener('click', (e) => {
+const newTask = document.getElementsByClassName('row');
+form.addEventListener('submit', (e) => {
     e.preventDefault();
     validFormFieldInput();
     
@@ -24,34 +25,21 @@ function validFormFieldInput (data) {
 
 
     if (name === '') {
-        onError (newTaskNameInput, 'Please enter task name!'); 
-    }else {
-        onSuccess(newTaskNameInput);
-    }
-    if (description === '') {
-        onError(newTaskDescription, 'Please enter task description');
-    } else {
-        onSuccess(newTaskDescription);
-    }
-    if (assignedTo === '') {
-        onError (newAssignedTo, 'Please fill out "Assigned to" box');
-    } else {
-        onSuccess (newAssignedTo);
-    }
-    if (dueDate === ''){
-        onError (newDueDate, 'Please enter due date');
-    } else {
-        onSuccess (newDueDate);
-    }
+        alert('Please enter task name!'); 
+        } else if (description === '') {
+        alert('Please enter task description');
+        } else if (assignedTo === '') {
+        alert('Please fill out "Assigned to" box');
+        } else if (dueDate === ''){
+        alert('Please enter due date');
+        } else {
+            
+            example.addTask(name, description, assignedTo, dueDate);
+            
+            console.log(example.tasks)
+        }
 }
 
-function onSuccess (input){
-    const parent = input.parentElement;
-    const messageErr = parent.querySelector('#alert');
-    messageErr.style.visibility = 'hidden';
-    messageErr.innerText = '';
-    
-}
 
 function onError (input, message){
     const parent = input.parentElement;
@@ -60,11 +48,11 @@ function onError (input, message){
         messageErr.innerText = message;
 }
 
- 
 
+console.log(creatTaskHtml);
 //console.log(example.tasks);
 //const task1 = example.addTask('Group 7', 'working on JavaScript', 'Sophia', '11/08/2022')
 //console.log(task1);
 //console.log(example);
-const example = new taskManager(0);
+
 
