@@ -3,25 +3,26 @@ const example = new taskManager(0);
 const form = document.querySelector('#form');
 const newTaskNameInput = document.querySelector('#exampleInputtaskname');
 const newTaskDescription = document.querySelector('#exampleFormControlTextarea1');
-const newAssignedTo = document.querySelector('#exampleInputassignedto');   
+const newAssignedTo = document.querySelector('#exampleInputassignedto');
 const newDueDate = document.querySelector('#exampleInputduedate');
 const newTask = document.getElementsByClassName('row');
+const parentUl = document.getElementById("tasksRow");
 
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     validFormFieldInput();
-    addTask();
-    render();
-    
-    
+    // example.addTask();
+
+
+
 });
 
 
 
 
-function validFormFieldInput (data) {
-    
+function validFormFieldInput(data) {
+
     const name = newTaskNameInput.value.trim();
     const description = newTaskDescription.value.trim();
     const assignedTo = newAssignedTo.value.trim();
@@ -29,27 +30,30 @@ function validFormFieldInput (data) {
 
 
     if (name === '') {
-        alert('Please enter task name!'); 
-        } else if (description === '') {
+        alert('Please enter task name!');
+    } else if (description === '') {
         alert('Please enter task description');
-        } else if (assignedTo === '') {
+    } else if (assignedTo === '') {
         alert('Please fill out "Assigned to" box');
-        } else if (dueDate === ''){
+    } else if (dueDate === '') {
         alert('Please enter due date');
-        } else {
-            
-            example.addTask(name, description, assignedTo, dueDate);
-            
-            console.log(example.tasks)
-        }
+    } else {
+
+        example.addTask(name, description, assignedTo, dueDate);
+
+        console.log(example.tasks)
+
+        const taskHtml = example.render();
+        parentUl.innerHTML = (taskHtml);
+    }
 }
 
 
-function onError (input, message){
+function onError(input, message) {
     const parent = input.parentElement;
     const messageErr = parent.querySelector('#alert');
-        messageErr.style.visibility = 'visible';
-        messageErr.innerText = message;
+    messageErr.style.visibility = 'visible';
+    messageErr.innerText = message;
 }
 
 
