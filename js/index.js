@@ -1,3 +1,5 @@
+//our instantiated class is below so that we can access this class' methods
+import { taskManager } from "./taskManager";
 const example = new taskManager(0);
 
 const form = document.querySelector('#form');
@@ -6,7 +8,9 @@ const newTaskDescription = document.querySelector('#exampleFormControlTextarea1'
 const newAssignedTo = document.querySelector('#exampleInputassignedto');
 const newDueDate = document.querySelector('#exampleInputduedate');
 const newTask = document.getElementsByClassName('row');
-const parentUl = document.getElementById("tasksRow");
+//This variable below encapuslates the html part where tasks will be rendered to the javascript
+const tasksList = document.getElementById("tasksRow");
+const tasksListChild = document.getElementById('child');
 
 
 form.addEventListener('submit', (e) => {
@@ -14,9 +18,9 @@ form.addEventListener('submit', (e) => {
     validFormFieldInput();
     // example.addTask();
 
-
-
 });
+
+
 
 
 
@@ -26,7 +30,7 @@ function validFormFieldInput(data) {
     const name = newTaskNameInput.value.trim();
     const description = newTaskDescription.value.trim();
     const assignedTo = newAssignedTo.value.trim();
-    const dueDate = newDueDate.value.trim();
+    const dueDate = newDueDate.value;
 
 
     if (name === '') {
@@ -38,13 +42,17 @@ function validFormFieldInput(data) {
     } else if (dueDate === '') {
         alert('Please enter due date');
     } else {
-
+        //this method stores the user's input for the render function/method
         example.addTask(name, description, assignedTo, dueDate);
 
-        console.log(example.tasks)
+        // console.log(example.tasks)
 
+        // the variable encapsulates the render method so that we can assign it to the corresponding HTML element
+        //the following code will also work: tasksList.innerHTML = (example.render());
+        //however, how it is below is cleaner. 
         const taskHtml = example.render();
-        parentUl.innerHTML = (taskHtml);
+        tasksList.innerHTML = (taskHtml);
+
     }
 }
 
@@ -57,10 +65,28 @@ function onError(input, message) {
 }
 
 
-console.log(creatTaskHtml);
+//console.log(createTaskHtml);
 //console.log(example.tasks);
 //const task1 = example.addTask('Group 7', 'working on JavaScript', 'Sophia', '11/08/2022')
 //console.log(task1);
 //console.log(example);
+//console.log(example.getTaskById(0));
 
+tasksList.addEventListener('click', (event) => {
+    let parentTask = 'row';
+    let taskId =example.id;
+    console.log(chose);
+    if (event.target.classList === parentTask) {
+        console.log("success");
+        example.status ='done';
+        let task= example.getTaskById(taskId).closest('li');
+        return task; 
+//need to make sure data-attribute and id are same data type...
+    } else {
+        console.error("try again");
+    }
+})
+    
+
+console.log(tasksList);
 
