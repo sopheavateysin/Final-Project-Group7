@@ -1,5 +1,6 @@
 //our instantiated class is below so that we can access this class' methods
-import { taskManager } from "./taskManager";
+// this is a node js
+//import { taskManager } from "./taskManager";
 const example = new taskManager(0);
 
 const form = document.querySelector('#form');
@@ -74,19 +75,27 @@ function onError(input, message) {
 
 tasksList.addEventListener('click', (event) => {
     let parentTask = 'row';
-    let taskId =example.id;
-    console.log(chose);
-    if (event.target.classList === parentTask) {
+    let taskId = event.target.closest('.row').getAttribute('TaskNumber'); //example.id;
+    console.log(taskId);
+    // console.log(chose);
+    console.log(event.target.classList, parentTask)
+    //event.target.classlist is object AND cannot compare directly to strin
+    if (event.target.classList.contains('btn-outline-success')) {
         console.log("success");
-        example.status ='done';
-        let task= example.getTaskById(taskId).closest('li');
-        return task; 
-//need to make sure data-attribute and id are same data type...
+        example.status = 'done';
+        let task = example.getTaskById(taskId);
+
+        return task;
+        //   console.log(task);
+        //need to make sure data-attribute and id are same data type...
+
+        //else if delete button pressed, delete task
     } else {
         console.error("try again");
+
     }
 })
-    
+
 
 console.log(tasksList);
 

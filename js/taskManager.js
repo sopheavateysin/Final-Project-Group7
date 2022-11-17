@@ -1,7 +1,7 @@
 //This is the skeleton for every new task card
 
 const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
-    const html = `<li class="row" Task Number: ${id}>
+    const html = `<li class="row" TaskNumber=' ${id}'>
  <div class="card" style="width: 48%">
      <div class=" card-body">
          <h5 class="card-title px-2">What: ${name}<span class="badge bg-danger my-2">${status}</span></h5>
@@ -69,17 +69,18 @@ class taskManager {
 
     getTaskById(taskId) {
         let foundTask;
-        for (let taskNumber = 0; taskNumber < this.tasks.length; taskNumber++) {
-            if (taskId === this.currentId) {
-                foundTask = this.tasks[taskNumber];
-            }
-        }
-        return foundTask;
+        // for (let taskNumber = 0; taskNumber < this.tasks.length; taskNumber++) {
+        ///   if (taskId === this.currentId) {
+        //     foundTask = this.tasks[taskNumber];
+        //  }
+        //}
+        return this.tasks[taskId];
 
     }
 
+    
 
 }
 
 
-export {taskManager};
+//export {taskManager};
