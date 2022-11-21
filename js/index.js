@@ -73,6 +73,8 @@ function onError(input, message) {
 //console.log(example);
 //console.log(example.getTaskById(0));
 
+
+// task 7 step 2 :Adding an Event Listener to the task list
 tasksList.addEventListener('click', (event) => {
     let parentTask = 'row';
     let taskId = event.target.closest('.row').getAttribute('TaskNumber'); //example.id;
@@ -98,4 +100,3 @@ tasksList.addEventListener('click', (event) => {
 
 
 console.log(tasksList);
-
