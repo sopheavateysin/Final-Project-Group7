@@ -3,6 +3,7 @@
 //import { taskManager } from "./taskManager";
 const example = new taskManager(0);
 
+
 const form = document.querySelector('#form');
 const newTaskNameInput = document.querySelector('#exampleInputtaskname');
 const newTaskDescription = document.querySelector('#exampleFormControlTextarea1');
@@ -12,7 +13,10 @@ const newTask = document.getElementsByClassName('row');
 //This variable below encapuslates the html part where tasks will be rendered to the javascript
 const tasksList = document.getElementById("tasksRow");
 const tasksListChild = document.getElementById('child');
-
+//load the cards using local storage
+example.load();
+const taskHtml = example.render();
+tasksList.innerHTML = taskHtml;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -20,10 +24,6 @@ form.addEventListener('submit', (e) => {
     // example.addTask();
 
 });
-
-
-
-
 
 
 function validFormFieldInput(data) {
@@ -92,11 +92,10 @@ tasksList.addEventListener('click', (event) => {
         //need to make sure data-attribute and id are same data type...
 
         //else if delete button pressed, delete task
+        //run the save method to update the task in the memory
     } else {
         console.error("try again");
 
     }
 })
-
-
 console.log(tasksList);

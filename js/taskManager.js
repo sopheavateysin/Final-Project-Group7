@@ -42,7 +42,7 @@ class taskManager {
         }
 
         this.tasks.push(task);
-
+        this.save();
     }
     //This function below renders the above code to the DOM/browser
     //  essentially, it is like a shadow of the above code and it will
@@ -57,7 +57,7 @@ class taskManager {
             //console.log(liveDate)
             let formattedDate = liveDate.toLocaleDateString();
             //  console.log(formattedDate)
-            let taskHtml = createTaskHtml(liveTask.name, liveTask.description, liveTask.assignedTo, liveTask.formattedDate, liveTask.status, liveTask.formattedDate, liveTask.id)
+            let taskHtml = createTaskHtml(liveTask.name, liveTask.description, liveTask.assignedTo, formattedDate, liveTask.status, liveTask.id)
             taskHtmlList.push(taskHtml);
             // console.log(taskHtmlList)
         }
