@@ -87,15 +87,26 @@ tasksList.addEventListener('click', (event) => {
         example.status = 'done';
         let task = example.getTaskById(taskId);
 
-        return task;
+        example.save()
+        example.render();
+
         //   console.log(task);
         //need to make sure data-attribute and id are same data type...
 
         //else if delete button pressed, delete task
         //run the save method to update the task in the memory
-    } else {
-        console.error("try again");
+    } else if (event.target.classList.contains('delete-button')) {
+        let parentTask = 'row';
+        let taskId = event.target.closest('.row').getAttribute('data-task-id');
+    console.log(taskId);
 
+        example.deleteTask(taskId);
+        example.save()
+    const taskHtml = example.render();
+    tasksList.innerHTML = taskHtml;
+
+    } else {
+        console.log('Error');
     }
 })
 console.log(tasksList);

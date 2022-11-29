@@ -1,7 +1,7 @@
 //This is the skeleton for every new task card
 
 const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
-    const html = `<li class="row" TaskNumber=' ${id}'>
+    const html = `<li class="row" data-task-id='${id}'>
  <div class="card" style="width: 48%">
      <div class=" card-body">
          <h5 class="card-title px-2">${name}<span class="badge bg-danger my-2">${status}</span></h5>
@@ -10,7 +10,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
          <h6 class="card-subtitle mb-3 px-2 text-muted">Due Date: ${dueDate} </h6>
          <div class="card-footer text-right">
              <button type="button" class="btn btn-outline-success">Mark as Done</button>
-             <button type="button" class="btn btn-outline-danger">Delete</button>
+             <button type="button" class="btn btn-outline-danger delete-button">Delete</button>
             
          </div>
      </div>
@@ -22,6 +22,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
 
 //The class below is akin to a factory function for task cards
 //The constructor consists of two properties, an array of all tasks and their respective id numbers
+
 class taskManager {
     constructor(currentId = 0) {
         this.tasks = [];
@@ -108,11 +109,20 @@ class taskManager {
 
             this.currentId = Number(currentId);
         }
+    }
 
+    deleteTask(taskId) {
+       let newTasks = [];
+        for (let i = 0; i < this.tasks.length; i++) {
+            const task = this.tasks[i];
+            console.log(taskId, task.id)
+            if (task.id !== Number(taskId)) {
+                newTasks.push(task);
+            }
+        }
+        this.tasks = newTasks;
+    }
 
-    
-
-}
  
 }
 
