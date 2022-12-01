@@ -9,7 +9,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
          <h6 class="card-subtitle mb-3 px-2 text-muted">Assigned To: ${assignedTo} </h6>
          <h6 class="card-subtitle mb-3 px-2 text-muted">Due Date: ${dueDate} </h6>
          <div class="card-footer text-right">
-             <button type="button" class="btn btn-outline-success">Mark as Done</button>
+            ${status === 'TO DO' ? '<button type="button" class="btn btn-outline-success">Mark as Done</button>' : ''} 
              <button type="button" class="btn btn-outline-danger delete-button">Delete</button>
             
          </div>
@@ -70,12 +70,13 @@ class taskManager {
 
     getTaskById(taskId) {
         let foundTask;
-        // for (let taskNumber = 0; taskNumber < this.tasks.length; taskNumber++) {
-        ///   if (taskId === this.currentId) {
-        //     foundTask = this.tasks[taskNumber];
-        //  }
-        //}
-        return this.tasks[taskId];
+        for (let taskNumber = 0; taskNumber < this.tasks.length; taskNumber++) {
+          if (Number(taskId) === this.tasks[taskNumber].id) {
+            foundTask = this.tasks[taskNumber];
+
+         }
+        }
+        return foundTask;
 
     }
 

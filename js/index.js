@@ -77,18 +77,19 @@ function onError(input, message) {
 // task 7 step 2 :Adding an Event Listener to the task list
 tasksList.addEventListener('click', (event) => {
     let parentTask = 'row';
-    let taskId = event.target.closest('.row').getAttribute('TaskNumber'); //example.id;
+    let taskId = event.target.closest('.row').getAttribute('data-task-id'); //example.id;
     console.log(taskId);
     // console.log(chose);
     console.log(event.target.classList, parentTask)
     //event.target.classlist is object AND cannot compare directly to strin
     if (event.target.classList.contains('btn-outline-success')) {
         console.log("success");
-        example.status = 'done';
+       
         let task = example.getTaskById(taskId);
-
-        example.save()
-        example.render();
+        console.log(task)
+        task.status = 'Done';
+        const taskHtml = example.render();
+        tasksList.innerHTML = taskHtml;
 
         //   console.log(task);
         //need to make sure data-attribute and id are same data type...
