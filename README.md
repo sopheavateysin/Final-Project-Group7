@@ -6,7 +6,7 @@
 - [Techologies](#technologies)
 - [Usage](#usage)
 - [Role](#role)
-- [Deploy] (#deploy)
+- Deploy Site
 
 ## Description
 Task Planner is kind of form validation used for creating to-do tasks. It includes task name, task description, assigned task to, and the due date of the task. It also has status update function from "to-do" to "done" and tasks can be deleted when done. 
@@ -32,5 +32,5 @@ Group contributers:
 
 If you have something you'd like to contribute, make a pull request!
 
-## Deploy
+## Deploy Site
 final-project-sprint1-group7.netlify.app
