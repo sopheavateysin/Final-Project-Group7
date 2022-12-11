@@ -6,7 +6,7 @@
 - [Techologies](#technologies)
 - [Installation](#installation) & [Usage](#usage)
 - [Role](#role)
-- [Deploy Site] (#deploysite)
+- [DeploySite] (#deploysite)
 
 ## Description
 Task Planner is kind of form validation used for creating to-do tasks. It includes task name, task description, assigned task to, and the due date of the task. It also has status update function from "to-do" to "done" and tasks can be deleted when done. 
