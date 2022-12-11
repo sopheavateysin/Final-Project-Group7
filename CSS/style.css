@@ -10,16 +10,25 @@ section,
 form {
     margin: 0 !important;
     padding: 0 !important;
+    background-color: rgb(147, 246, 213);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
     text-align: center;
+}
+.bg-primary {
+    color: greenyellow !important;
+    background-color: rgb(10, 150, 150) !important;
 }
 
 html,
 body,
 h1 {
     width: 100vw;
+}
+form {
+    font-size: 20px;
 }
 
 ul {
@@ -32,6 +41,9 @@ ul {
 .card {
     margin: 1em !important;
 }
+.card-body {
+    background-color: aliceblue;
+}
 
 .task {
     font-weight: bold;
@@ -39,6 +51,7 @@ ul {
     margin-top: 20px;
     width: 100%;
 }
+
 
 form,
 section {
@@ -52,6 +65,8 @@ section {
     margin: 0px;
     display: flex;
     justify-content: center;
+    background-color: rgb(10, 150, 150);
+    color:  aquamarine !important ;
 }
 
 .card-footer {
